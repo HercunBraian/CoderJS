@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "nombre": "Gabinete Gamer Thermaltake V250 Tg Argb",
+      "precio": 11999,
+      "img": "img/productos/cpu1.webp"
+    },
+    {
+      "id": 2,
+      "nombre": "Gabinete Thermaltake Level 20",
+      "precio": 15630,
+      "img": "img/productos/cpu2.webp"
+    },
+    {
+      "id": 3,
+      "nombre": "Gabinete Gamer Cooler Master K501l Argb Atx",
+      "precio": 15400,
+      "img": "img/productos/cpu4.webp"
+    },  {
+      "id": 4,
+      "nombre": "Gabinete Premium Master BH232 Argb",
+      "precio": 16599,
+      "img": "img/productos/cpu3.webp"
+    },  {
+      "id": 5,
+      "nombre": "Consola Gamer Portátil Netmak 16bits 140 Juegos",
+      "precio": 4599,
+      "img": "img/productos/consola1.webp"
+    },  {
+      "id": 6,
+      "nombre": "Nintendo Switch OLED 64GB Standard",
+      "precio": 94599,
+      "img": "img/productos/consola2.webp"
+    },
+    {
+      "id": 7,
+      "nombre": "Sony PlayStation 4 Slim 1TB Standard",
+      "precio": 103300,
+      "img": "img/productos/consola3.webp"
+    },
+    {
+      "id": 8,
+      "nombre": "Sony PlayStation 5 825GB Standard",
+      "precio": 160450,
+      "img": "img/productos/consola4.webp"
+    }
+  ]

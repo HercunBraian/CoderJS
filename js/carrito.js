@@ -1,159 +1,114 @@
-﻿const cards = document.getElementById('cards')
-const items = document.getElementById('items')
-const footer = document.getElementById('footer');
-const templateCard = document.getElementById('template-card').content
-const templateCarrito = document.getElementById('template-carrito').content
+﻿const footer = document.getElementById('footer');
+
 const templateFooter = document.getElementById('template-footer').content
+const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment();
-let carrito = {};
+const fragment2 = document.createDocumentFragment();
+const fragment3 = document.createDocumentFragment();
 
-//Productos 
-
-const productosAll = [
-  {
-    "id": 1,
-    "nombre": "Gabinete Gamer Thermaltake V250 Tg Argb",
-    "precio": 11999,
-    "img": "img/productos/cpu1.webp"
-  },
-  {
-    "id": 2,
-    "nombre": "Gabinete Thermaltake Level 20",
-    "precio": 15630,
-    "img": "img/productos/cpu2.webp"
-  },
-  {
-    "id": 3,
-    "nombre": "Gabinete Gamer Cooler Master K501l Argb Atx",
-    "precio": 15400,
-    "img": "img/productos/cpu4.webp"
-  },  {
-    "id": 4,
-    "nombre": "Gabinete Premium Master BH232 Argb",
-    "precio": 16599,
-    "img": "img/productos/cpu3.webp"
-  },  {
-    "id": 5,
-    "nombre": "Consola Gamer Portátil Netmak 16bits 140 Juegos",
-    "precio": 4599,
-    "img": "img/productos/consola1.webp"
-  },  {
-    "id": 6,
-    "nombre": "Nintendo Switch OLED 64GB Standard",
-    "precio": 94599,
-    "img": "img/productos/consola2.webp"
-  },
-  {
-    "id": 7,
-    "nombre": "Sony PlayStation 4 Slim 1TB Standard",
-    "precio": 103300,
-    "img": "img/productos/consola3.webp"
-  },
-  {
-    "id": 8,
-    "nombre": "Sony PlayStation 5 825GB Standard",
-    "precio": 160450,
-    "img": "img/productos/consola4.webp"
-  }
-];
+let carrito = {}
 
 
-// Mostramos los productos en el HTML
-
-const mostrarCard = productosAll =>{
-  productosAll.forEach(producto => {
-    templateCard.querySelector('h5').textContent = producto.nombre;
-    templateCard.querySelector('p').textContent = producto.precio;
-    templateCard.querySelector('img').setAttribute("src", producto.img);
-    templateCard.querySelector('.btn-dark').dataset.id = producto.id;
-
-    const clone = templateCard.cloneNode(true);
-    fragment.appendChild(clone);
-  });
-
-  cards.appendChild(fragment);
+function showCart(x){
+  document.getElementById("products-id").style.display = "block";
+}
+function closeBtn(){
+   document.getElementById("products-id").style.display = "none";
 }
 
-mostrarCard(productosAll);
-
-// Agregamos al carrito el producto deseado
-
-cards.addEventListener('click', e =>{
-  agregarCarrito(e);
-})
-
-items.addEventListener('click', e =>{
-  btnAccion(e);
-})
-
-const agregarCarrito = e =>{
-  if(e.target.classList.contains('btn-dark')){
-      setCarrito(e.target.parentElement);
+// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
+document.addEventListener('DOMContentLoaded', e => {
+  fetchData()
+  if (localStorage.getItem('carrito')) {
+      carrito = JSON.parse(localStorage.getItem('carrito'))
+      pintarCarrito()
   }
-  e.stopPropagation();
+});
+
+items.addEventListener('click', e => { btnAumentarDisminuir(e) })
+
+// Llamamos a nuestro archivo Json con los datos de los productos.
+const fetchData = async () => {
+  const res = await fetch('api.json');
+  const data = await res.json()
 }
-
-const setCarrito = objeto =>{
-  const producto = {
-    
-    id: objeto.querySelector('.btn-dark').dataset.id,
-    nombre: objeto.querySelector('h5').textContent,
-    precio: objeto.querySelector('p').textContent,
-    cantidad: 1
-   }
-   if(carrito.hasOwnProperty(producto.id)){
-      producto.cantidad = carrito[producto.id].cantidad + 1;
-   }
-
-   carrito[producto.id] = {...producto}
-   mostrarCarrito();
-  }
 
 // Mostramos los productos del carrito en el HTML
 
-  const mostrarCarrito = () =>{
-    /* console.log(carrito); */
-    items.innerHTML = '';
-    Object.values(carrito).forEach(producto =>{
-      templateCarrito.querySelectorAll('td')[0].textContent = producto.nombre;
-      templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad;
-      templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio;
+const pintarCarrito = () =>{
+   
+  items.innerHTML = '';
+  Object.values(carrito).forEach(producto =>{
+    templateCarrito.querySelector('img').setAttribute("src", producto.img);
+    templateCarrito.querySelectorAll('th').textContent = producto.id;
+    templateCarrito.querySelectorAll('td')[0].textContent = producto.nombre;
+    templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad;
+    templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio;
 
-      const clone = templateCarrito.cloneNode(true);
-      fragment.appendChild(clone);
-    })
+    //botones
+    templateCarrito.querySelector('.btn-info').dataset.id = producto.id
+    templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
 
-    items.appendChild(fragment);
+    const clone = templateCarrito.cloneNode(true);
+    fragment.appendChild(clone);
+  })
 
-    mostrarFooter();
+  items.appendChild(fragment);
+
+  pintarFooter();
+
+  localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+
+const pintarFooter = () => {
+  footer.innerHTML = ''
+  
+  if (Object.keys(carrito).length === 0) {
+      footer.innerHTML = `
+      <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+      `
+      return
+  }
+  
+  // sumar cantidad y sumar totales
+  const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
+  const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
+  
+
+  templateFooter.querySelectorAll('td')[0].textContent = nCantidad
+  templateFooter.querySelector('span').textContent = nPrecio
+
+  const clone = templateFooter.cloneNode(true)
+  fragment.appendChild(clone)
+
+  footer.appendChild(fragment)
+
+  const boton = document.querySelector('#vaciar-carrito')
+  boton.addEventListener('click', () => {
+      carrito = {}
+      pintarCarrito()
+
+  })
+}
+
+const btnAumentarDisminuir = e => {
+  // console.log(e.target.classList.contains('btn-info'))
+  if (e.target.classList.contains('btn-info')) {
+      const producto = carrito[e.target.dataset.id]
+      producto.cantidad++
+      carrito[e.target.dataset.id] = { ...producto }
+      pintarCarrito()
   }
 
-  const mostrarFooter = () => {
-    footer.innerHTML = ''
-    
-    if (Object.keys(carrito).length === 0) {
-        footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
-        `
-        return
-    }
-    
-    // sumar cantidad y sumar totales
-    const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
-    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
-    // console.log(nPrecio)
-
-    templateFooter.querySelectorAll('td')[0].textContent = nCantidad
-    templateFooter.querySelector('span').textContent = nPrecio
-
-    const clone = templateFooter.cloneNode(true)
-    fragment.appendChild(clone)
-
-    footer.appendChild(fragment)
-
-    const boton = document.querySelector('#vaciar-carrito')
-    boton.addEventListener('click', () => {
-        carrito = {}
-        mostrarCarrito()
-    })
+  if (e.target.classList.contains('btn-danger')) {
+      const producto = carrito[e.target.dataset.id]
+      producto.cantidad--
+      if (producto.cantidad === 0) {
+          delete carrito[e.target.dataset.id]
+      } else {
+          carrito[e.target.dataset.id] = {...producto}
+      }
+      pintarCarrito()
+  }
+  e.stopPropagation()
 }

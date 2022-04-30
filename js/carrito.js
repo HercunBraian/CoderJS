@@ -2,6 +2,7 @@
 
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
+const procesarCompraBtn = document.getElementById('procesar-compra'); // Procesar Compra
 const fragment = document.createDocumentFragment();
 const fragment2 = document.createDocumentFragment();
 const fragment3 = document.createDocumentFragment();
@@ -32,6 +33,11 @@ const fetchData = async () => {
   const res = await fetch('api.json');
   const data = await res.json()
 }
+
+//Eventos
+
+procesarCompraBtn.addEventListener('click', e => {procesarCompra(e)})
+
 
 // Mostramos los productos del carrito en el HTML
 
@@ -103,12 +109,26 @@ const btnAumentarDisminuir = e => {
   if (e.target.classList.contains('btn-danger')) {
       const producto = carrito[e.target.dataset.id]
       producto.cantidad--
-      if (producto.cantidad === 0) {
-          delete carrito[e.target.dataset.id]
-      } else {
-          carrito[e.target.dataset.id] = {...producto}
-      }
+      producto.cantidad === 0 ? delete carrito[e.target.dataset.id] : carrito[e.target.dataset.id] = {...producto}
+
       pintarCarrito()
   }
   e.stopPropagation()
+}
+
+// Aplicando alerta cuando finalizamos la compra
+
+const procesarCompra = e =>{
+
+  Object.keys(carrito).length >= 1 ? Swal.fire(
+    'Gracias por su Compra!',
+    'Se le enviara la factura por mail!',
+    'success'
+) : Swal.fire({
+  type: 'error',
+  title: 'Oops...',
+  text: 'El carrito está vacío, agrega algún producto',
+  showConfirmButton: false,
+  timer: 2000
+})
 }

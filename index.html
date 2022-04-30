@@ -17,15 +17,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<!-- ############# CSS SweetAlert ############## -->
+  <!-- ############# CSS SweetAlert ############## -->
   <link rel="stylesheet" href="css/sweetalert2.min.css">
-  
+
   <!-- ############# CSS ############## -->
   <link rel="stylesheet" href="css/estilos.css">
 
   <!-- ############# FontAwesome Icons ################ -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"
-    integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
 
   <!-- ############# Animate Css ################ -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -62,6 +61,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="carrito.html">Carrito</a>
+                
               </li>
             </ul>
 
@@ -73,7 +73,7 @@
               <div class="cart-products" id="products-id">
                 <p class="close-btn" onclick="closeBtn()">X</p>
                 <h3>Mi carrito</h3>
-                <div class="card-items" id="braian">
+                <div class="card-items" id="itemsCards">
 
                 </div>
 
@@ -94,10 +94,117 @@
 
   <main class="site-main">
 
+    <!-- ############# Comienzo de Banner ################ -->
+
+     <!-- ############# Comienzo de Banner ################ -->
+
+     <section class="site-banner">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-12 site-title">
+                  <img src="img/header/logo2.webp" alt="LogoHeader">
+                  <h1 class="text-uppercase animate__animated animate__bounceIn">LA MEJOR RELACION</h1>
+                  <h2 class="text-uppercase animate__animated animate__bounceIn">CALIDAD - PRECIO</h2>
+                  <p class="lead text-light animate__animated animate__bounceIn">La mayor variedad de componentes
+                      y al mejor precio los encontrás sólo
+                      en BHTECH. Los mejores precios, garantía oficial y envíos a todo el país. Marcas: GIGABYTE,
+                      AMD, ZOTAC, INTEL.</p>
+              </div>
+              <div class="col-lg-6 col-md-12 banner-image">
+                  <img src="img/header/combo.webp" alt="Banner-Img">
+              </div>
+          </div>
+      </div>
+  </section>
+
+       <!-- ############# Inicio Categorias ################ -->
+
+
+  <div class="barra">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-12 col-lg-3 icono icono1">
+                <p>Venta Online<br>
+                Explora los nuevos productos</p>
+            </div>
+            <div class="col-sm-12 col-lg-3 icono icono2">
+                <p>Metodo de Pago<br>
+                Tarjeta de Credito, Debito y MercadoPago</p>
+            </div> 
+            <div class="col-sm-12 col-lg-3 icono icono3">
+                <p>Telefono de contacto<br>
+               +54 9 1533323423</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- DEMO 5 -->
+        <div class="container pt-5">
+
+          <div class="row" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-12 text-center cat-titulo animate__animated animate__backInLeft">
+                  <h2 class="linea"><span>CATEGORIAS</span></h2>
+              </div>
+          </div>
+          <div class="py-5">
+              <div class="row">
+                  <!-- DEMO 5 Item-->
+                  <div class="col-sm-6 col-lg-3 mb-4" data-aos="zoom-in-up">
+                      <!-- DEMO 5 Item-->
+                      <div class="categorias hover-cat text-white rounded"> <img src="img/categorias/cpu.webp" alt=" CPU GAMERS">
+                              <div class="categorias-overlay"></div>
+                              <div class="hover-cat-content">
+                                  <h3 class="hover-cat-title text-center text-uppercase font-weight-light ">GABINETES GAMERS<strong class="font-weight-bold text-white"></strong></h3>
+                              </div>
+                      </div></a>
+                  </div>
+                  <div class="col-sm-6 col-lg-3 mb-4" data-aos="zoom-in-up" data-aos-delay="200">
+                      <!-- DEMO 5 Item-->
+                      <div class="categorias hover-cat text-white rounded"><img src="img/categorias/perifericos.webp" alt="PERIFERICOS GAMERS">
+                              <div class="categorias-overlay"></div>
+                              <div class="hover-cat-content">
+                                  <h3 class="hover-cat-title text-center text-uppercase font-weight-light">
+                                      PERIFERICOS<strong class="font-weight-bold text-white"></strong></h3>
+                              </div>
+                      </div></a>
+                  </div>
+                  <div class="col-sm-6 col-lg-3 mb-4" data-aos="zoom-in-up" data-aos-delay="400">
+                      <!-- DEMO 5 Item-->
+                      <div class="categorias hover-cat text-white rounded"> <img src="img/categorias/consolas.webp" alt="CONSOLAS">
+                              <div class="categorias-overlay"></div>
+                              <div class="hover-cat-content">
+                                  <h3 class="hover-cat-title text-center text-uppercase font-weight-light">
+                                      CONSOLAS<strong class="font-weight-bold text-white"></strong></h3>
+                              </div>
+                      </div></a>
+                  </div>
+                  <div class="col-sm-6 col-lg-3 mb-4" data-aos="zoom-in-up" data-aos-delay="600">
+                      <!-- DEMO 5 Item-->
+                      <div class="categorias hover-cat text-white rounded"><img src="img/categorias/combo.webp" alt="PC GAMERS">
+                              <div class="categorias-overlay"></div>
+                              <div class="hover-cat-content">
+                                  <h3 class="hover-cat-title text-center text-uppercase font-weight-light">PC
+                                      GAMERS<strong class="font-weight-bold text-white"></strong></h3>
+                              </div>
+                      </div></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- ############# Fin de Categorias ################ -->
+
     <!-- ############# Inicio Productos ################ -->
 
     <div class="container">
-      <h2 class="text-center">Tienda Productos Gamers</h2>
+      <div class="row" data-aos="fade-up">
+        <div class="col-lg-12 text-center cat-titulo mb-5">
+            <h2 class="linea animate__animated animate__backInLeft"><span>PRODUCTOS</span></h2>
+        </div>
+    </div>
 
       <div class="row" id="cards"></div>
     </div>
@@ -139,22 +246,147 @@
           <p class="productos__precio">$11.599</p>
           <button class="productos__carrito btn btn-dark">Comprar</button>
         </div>
+
       </div>
     </template>
 
+        <!-- ############# Inicio de Footer ################ -->
+        <footer class="text-center text-lg-start text-white" style="background-color: #382659">
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+              <!-- Section: Links -->
+              <section class="">
+                  <!--Grid row-->
+                  <div class="row">
+                      <!-- Grid column -->
+                      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                          <h6 class="text-uppercase mb-4 font-weight-bold">
+                              <img src="img/footer/logofooter.webp" class="logo_footer" alt="Logo Footer BHTECH">
+                          </h6>
+                          <p>
+                              En HB-TECH buscamos destacar por nuestro conocimiento e intentamos establecernos como la
+                              opción ideal para sus compras de tecnología. Todos nuestros vendedores se encuentran
+                              altamente capacitados para asesorarlo y ofrecerle exactamente lo que necesita el
+                              cliente.
+                          </p>
+                      </div>
+                      <!-- Grid column -->
+
+                      <hr class="w-100 clearfix d-md-none" />
+
+                      <!-- Grid column -->
+                      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 text-deconone">
+                          <h6 class="text-uppercase mb-4 font-weight-bold">PRODUCTOS</h6>
+
+                          <li class="nav-item active text-deconone pb-3">
+                              <a class="text-hover text-deconone" >CPU GAMER</a>
+                          </li>
+                          <li class="nav-item active text-deconone pb-3">
+                              <a class="text-hover text-deconone" >PERIFERICOS</a>
+                          </li>
+                          <li class="nav-item active text-deconone pb-3">
+                              <a class="text-hover text-deconone" >CONSOLAS</a>
+                          </li>
+                          <li class="nav-item active text-deconone pb-3">
+                              <a class="text-hover text-deconone" >PC GAMERS</a>
+                          </li>
+                          <li class="nav-item active text-deconone pb-3">
+                              <a class="text-hover text-deconone" ">PLACAS DE VIDEO</a>
+                          </li>
+                          <li class="nav-item active text-deconone">
+                              <a class="text-hover text-deconone" >MEMORIAS RAM</a>
+                          </li>
+                      </div>
+                      <!-- Grid column -->
+
+                      <hr class="w-100 clearfix d-md-none" />
+
+                      <!-- Grid column -->
+                      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                          <h6 class="text-uppercase mb-4 font-weight-bold">
+                              SECCIONES
+                          </h6>
+                          <li class="nav-item active text-deconone pb-3">
+                              <a class="text-hover text-deconone" href="index.html">PRODUCTOS</a>
+                          </li>
+                          <li class="nav-item active text-deconone pb-3">
+                              <a class="text-hover text-deconone" href="carrito.html">CARRITO</a>
+                          </li>
+                      </div>
+
+                      <!-- Grid column -->
+                      <hr class="w-100 clearfix d-md-none" />
+
+                      <!-- Grid column -->
+                      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                          <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
+                          <p><i class="fas fa-home mr-3"></i> Buenos Aires, Argentina</p>
+                          <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                          <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                          <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                      </div>
+                      <!-- Grid column -->
+                  </div>
+                  <!--Grid row-->
+              </section>
+              <!-- Section: Links -->
+
+              <hr class="my-3">
+
+              <!-- Section: Copyright -->
+              <section class="p-3 pt-0">
+                  <div class="row d-flex align-items-center">
+                      <!-- Grid column -->
+                      <div class="col-md-7 col-lg-8 text-center text-md-start">
+                          <!-- Copyright -->
+                          <div class="p-3">
+                              © 2022 Copyright:
+                              <a class="text-white" href="https://hercunbraian.github.io/BHTECH/">BHTECH</a>
+                          </div>
+                          <!-- Copyright -->
+                      </div>
+                      <!-- Grid column -->
+
+                      <!-- Grid column -->
+                      <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+
+
+                          <!-- Whatsapp -->
+                          <a href="https://api.whatsapp.com/send?phone=0123456789" target="_blank" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                                  class="fa-brands fa-whatsapp"></i></a>
+
+                          <!-- Instagram -->
+                          <a href="https://instagram.com/designbhtech" target="_blank" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                                  class="fab fa-instagram"></i></a>
+                      </div>
+                      <!-- Grid column -->
+                  </div>
+              </section>
+              <!-- Section: Copyright -->
+          </div>
+          <!-- Grid container -->
+      </footer>
+      <!-- ############# Fin de Footer ################ -->
 
   </main>
   <!-- ############# Fin de Productos ################ -->
 
   <script src="js/jquery-3.4.1.min.js"></script>
+
   <!-- ############# Js Jquery ################ -->
   <script src="js/index.js"></script>
+
+  <!-- ############# Nav Fixed ################ -->
+  <script src="js/main.js"></script>
+
 
   <!-- ############# Js Bootstrap ################ -->
   <script src="js/bootstrap.min.js"></script>
   <script src="js/sweetalert2.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
 
   <script src="js/bootstrap.min.js"></script>
 

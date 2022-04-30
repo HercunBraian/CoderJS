@@ -7,7 +7,7 @@ const contadorTotal = document.getElementById('contadorTotal');
 const templateTotal = document.getElementById('template-total').content
 
 
-const braian = document.getElementById('braian');
+const itemsCards = document.getElementById('itemsCards');
 const templateCompra = document.getElementById('template-compra').content
 const templateContador = document.getElementById('template-contador').content
 const templateCard = document.getElementById('template-card').content
@@ -46,19 +46,15 @@ const fetchData = async () => {
 //Eventos
 
 // Eliminamos el producto seleccionado
-braian.addEventListener('click', e =>{
-  eliminarProducto(e)
-})
+itemsCards.addEventListener('click', e =>{eliminarProducto(e)})
 
-procesarPedidoBtn.addEventListener('click', e =>{
-  procesarPedido(e)
-})
+procesarPedidoBtn.addEventListener('click', e =>{procesarPedido(e)})
 
 
 
 // Mostramos los productos en el Carrito
 const mostrarCompra = () =>{
-  braian.innerHTML = '';
+  itemsCards.innerHTML = '';
   Object.values(carrito).forEach(producto =>{
     templateCompra.querySelector('img').setAttribute("src", producto.img);
     templateCompra.querySelector('h5').textContent = producto.nombre;
@@ -71,7 +67,7 @@ const mostrarCompra = () =>{
     fragment.appendChild(clone);
   })
 
-  braian.appendChild(fragment);
+  itemsCards.appendChild(fragment);
   localStorage.setItem('carrito', JSON.stringify(carrito))
   mostrarTotal(); 
 
@@ -123,7 +119,7 @@ const setCarrito = objeto =>{
    if(carrito.hasOwnProperty(producto.id)){
       producto.cantidad = carrito[producto.id].cantidad + 1;
    }
-
+// Generamos una copia de producto aplicando spread operator.
    carrito[producto.id] = {...producto}
    mostrarCompra();
   }
@@ -158,27 +154,25 @@ const mostrarTotal = () => {
 const eliminarProducto = e =>{
   if (e.target.classList.contains('delete-product')) {
     const producto = carrito[e.target.dataset.id]
-    if (producto.id == e.target.dataset.id) {
-      delete carrito[e.target.dataset.id]
-  } else {
-      carrito[e.target.dataset.id] = {...producto}
-  }
+// Aplicando operador ternario.
+// Generamos una copia de producto aplicando spread operator.
+    producto.id == e.target.dataset.id ? delete carrito[e.target.dataset.id] : carrito[e.target.dataset.id] = {...producto}
+    
   mostrarCompra()
 }
 }
 
+// Aplicando alerta cuando el carrito se encuentra vacio y se presiona el boton procesar compra
+// Aplicando operador ternario.
+const procesarPedido = e =>{
 
-  const procesarPedido = e =>{
-    if (Object.keys(carrito).length === 0) {
-      Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'El carrito está vacío, agrega algún producto',
-        showConfirmButton: false,
-        timer: 2000
-    })
+  Object.keys(carrito).length === 0 ? Swal.fire({
+    type: 'error',
+    title: 'Oops...',
+    text: 'El carrito está vacío, agrega algún producto',
+    showConfirmButton: false,
+    timer: 2000
+}) : location.href = "carrito.html";
+
 }
-else {
-    location.href = "carrito.html";
-  }
-}
+

@@ -53,6 +53,164 @@
 
 /*############ Fin Navegacion #############*/
 
+/*############ Header #############*/
+.site-banner {
+  background-image: linear-gradient(to right, #322749, #42284d, #52294e, #62294d, #712a4a);
+  padding-bottom: 30px; }
+
+.site-main .site-banner .site-title {
+  padding-top: 2%;
+  text-align: center; }
+
+.site-main .site-banner .site-title h1, .site-main .site-banner .site-title .h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f8f2f2; }
+  @media only screen and (max-width: 575px) {
+    .site-main .site-banner .site-title h1, .site-main .site-banner .site-title .h1 {
+      font-size: 30px; } }
+
+.site-main .site-banner .site-title h2, .site-main .site-banner .site-title .h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #f8f2f2; }
+
+.site-main .site-banner .site-title > img {
+  padding: 1rem 2rem;
+  max-width: 500px;
+  width: 100%; }
+
+.site-main .site-banner .banner-image {
+  text-align: center; }
+
+.site-main .site-banner .banner-image > img {
+  padding: 3rem 2rem;
+  max-width: 450px;
+  width: 100%; }
+
+
+  /*############ CATEGORIAS #############*/
+.cat-titulo h2, .cat-titulo .h2 {
+  color: #030303;
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+  padding: 4px; }
+
+#cpugamer, #perifericos, #consolas, #placasvideo, #pcgamers, #rams {
+  padding-top: 100px; }
+
+.cat-titulo .linea {
+  position: relative;
+  z-index: 1; }
+
+.cat-titulo .linea:before {
+  border-top: 2px solid #790f83;
+  content: "";
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  z-index: -1; }
+
+.cat-titulo .linea span {
+  background: #fff;
+  padding: 0 15px; }
+
+.categorias {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60%; }
+
+.categorias img {
+  width: 100%;
+  position: absolute;
+  transition: all 0.3s; }
+
+.categorias-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  transition: all 0.4s;
+  border: solid 4px;
+  border-top-color: #8c284e;
+  border-left-color: #8c284e;
+  border-right-color: #564892;
+  border-bottom-color: #564892; }
+
+.hover-content {
+  position: relative;
+  z-index: 99; }
+
+.hover-cat::after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  background: #a407b3;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  display: block;
+  transition: all 0.3s;
+  z-index: 999; }
+
+.text-hover {
+  color: #f8f2f2; }
+
+.text-hover:hover {
+  color: #a407b3; }
+
+.hover-cat-title {
+  position: absolute;
+  transition: all 0.3s;
+  z-index: 99;
+  width: 176px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  margin: -21px 0 0 -85px; }
+  @media only screen and (max-width: 1199px) {
+    .hover-cat-title {
+      font-size: 1.2rem;
+      margin: -11px 0 0 -88px; } }
+  @media only screen and (max-width: 991px) {
+    .hover-cat-title {
+      font-size: 1.6rem;
+      margin: -11px 0 0 -88px; } }
+  @media only screen and (max-width: 767px) {
+    .hover-cat-title {
+      font-size: 1.3rem;
+      margin: -11px 0 0 -88px; } }
+  @media only screen and (max-width: 575px) {
+    .hover-cat-title {
+      font-size: 1.7rem;
+      margin: -11px 0 0 -88px; } }
+
+.hover-cat-title span {
+  transition: all 0.4s;
+  opacity: 0;
+  color: #a407b3; }
+
+.hover-cat:hover .categorias-overlay {
+  background: rgba(0, 0, 0, 0.8); }
+
+.hover-cat:hover .hover-cat-title a {
+  bottom: 0; }
+
+.hover-cat:hover .hover-cat-title span {
+  opacity: 1; }
+
+.hover-cat:hover::after {
+  bottom: 0; }
+
+/*############ Fin Categorias#############*/
+
+
 /*############ Productos #############*/
 .productos {
   margin-bottom: 50px; }
@@ -203,12 +361,12 @@
   font-weight: 700;
   display: contents;
 }
-
-/*stye to btn close*/
+  
+  
 p.close-btn{
-  top: 5px;
-  right: 11px;
-  cursor: pointer;
+top: 5px;
+right: 11px;
+cursor: pointer;
   color: #000;
 }
 
@@ -222,3 +380,43 @@ p.close-btn{
 .img_carrito {
   width: 87px;
   height: 95px; }
+
+/*############# Informacion ###########*/
+
+.barra {
+  padding: 20px 0;
+  background: #ee2763;
+  background: -webkit-linear-gradient(left, #e20c9b 0%,#ad0034 100% );
+}
+.barra p {
+  margin: 0;
+  color: white;
+}
+.icono {
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 60px;
+  background-size: 46px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+@media (min-width: 750px) {
+  .icono {
+      margin-bottom: 0;
+  }
+}
+
+.icono1 {
+  background-image: url(../img/icono-1.png);
+}
+.icono2 {
+  background-image: url(../img/icono-2.png);
+}
+.icono3 {
+  background-image: url(../img/icono-3.png);
+}
+
+/*############ Variables CSS #############*/
+.text-deconone {
+  text-decoration: none;
+  list-style: none; }

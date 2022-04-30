@@ -43,5 +43,29 @@
       "nombre": "Sony PlayStation 5 825GB Standard",
       "precio": 160450,
       "img": "img/productos/consola4.webp"
+    },
+    {
+      "id": 9,
+      "nombre": "Kit de teclado y mouse gamer Newvision",
+      "precio": 5.799,
+      "img": "img/productos/peri1.webp"
+    },
+    {
+      "id": 10,
+      "nombre": "Sony PlayStation 5 825GB Standard",
+      "precio": 160450,
+      "img": "img/productos/peri2.webp"
+    },
+    {
+      "id": 11,
+      "nombre": "Sony PlayStation 5 825GB Standard",
+      "precio": 160450,
+      "img": "img/productos/mause.webp"
+    },
+    {
+      "id": 12,
+      "nombre": "Sony PlayStation 5 825GB Standard",
+      "precio": 160450,
+      "img": "img/productos/auriculares.webp"
     }
   ]

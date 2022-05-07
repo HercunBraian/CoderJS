@@ -20,6 +20,7 @@ const fragment3 = document.createDocumentFragment();
 let carrito = {}
 
 
+
 function showCart(x){
   document.getElementById("products-id").style.display = "block";
 }
@@ -41,7 +42,7 @@ const fetchData = async () => {
   const res = await fetch('api.json');
   const data = await res.json()
   pintarCards(data)
-}
+} 
 
 //Eventos
 
@@ -101,7 +102,9 @@ cards.addEventListener('click', e =>{
 const agregarCarrito = e =>{
   if(e.target.classList.contains('btn-dark')){
       setCarrito(e.target.parentElement);
+      
   }
+
   e.stopPropagation();
 }
 
@@ -175,4 +178,3 @@ const procesarPedido = e =>{
 }) : location.href = "carrito.html";
 
 }
-

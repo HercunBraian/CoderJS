@@ -78,10 +78,12 @@ const mostrarCompra = () =>{
 
 const pintarCards = data =>{
   data.forEach(producto => {
-    templateCard.querySelector('h5').textContent = producto.nombre;
-    templateCard.querySelector('p').textContent = producto.precio;
+    templateCard.querySelector('h3').textContent = producto.nombre;
+    templateCard.querySelector('h6').textContent = producto.precio;
     templateCard.querySelector('img').setAttribute("src", producto.img);
-    templateCard.querySelector('.btn-dark').dataset.id = producto.id;
+    templateCard.querySelector('.buy-2').dataset.id = producto.id;
+    templateCard.querySelector('.product-item').setAttribute("category", producto.categoria);
+
 
     const clone = templateCard.cloneNode(true);
     fragment.appendChild(clone);
@@ -95,12 +97,12 @@ const pintarCards = data =>{
 // Agregamos al carrito el producto deseado
 
 cards.addEventListener('click', e =>{
-  agregarCarrito(e);
+  agregarCarrito(e);  
 })
 
 
 const agregarCarrito = e =>{
-  if(e.target.classList.contains('btn-dark')){
+  if(e.target.classList.contains('buy-2')){
       setCarrito(e.target.parentElement);
       
   }
@@ -111,9 +113,9 @@ const agregarCarrito = e =>{
 const setCarrito = objeto =>{
   const producto = {
     
-    id: objeto.querySelector('.btn-dark').dataset.id,
-    nombre: objeto.querySelector('h5').textContent,
-    precio: objeto.querySelector('p').textContent,
+    id: objeto.querySelector('.buy-2').dataset.id,
+    nombre: objeto.querySelector('h3').textContent,
+    precio: objeto.querySelector('h6').textContent,
     img: objeto.querySelector('img').src,
     cantidad: 1
     
@@ -178,3 +180,33 @@ const procesarPedido = e =>{
 }) : location.href = "carrito.html";
 
 }
+
+
+// FILTRO POR CATEGORIA ====================
+
+$(document).ready(function(){
+
+  // AGREGANDO CLASE ACTIVE AL PRIMER ENLACE ====================
+  $('.category_list .category_item[category="all"]').addClass('ct_item-active');
+
+  $('.category_item').click(function(){
+    var catProduct = $(this).attr('category');
+  // AGREGANDO CLASE ACTIVE AL ENLACE SELECCIONADO ====================
+    console.log(catProduct);
+    $('.category_item').removeClass('ct_item-active');
+    $(this).addClass('ct_item-active');
+
+    // OCULTANDO PRODUCTOS =============
+
+    $('.product-item').hide();
+
+    // MOSTRANDO PRODUCTOS =============
+
+    $('.product-item[category="'+catProduct+'"]').show();
+});
+
+    $('.category_item[category="all"]').click(function(){
+      $('.product-item').show();
+    });
+
+});

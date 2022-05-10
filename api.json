@@ -2,70 +2,166 @@
     {
       "id": 1,
       "nombre": "Gabinete Gamer Thermaltake V250 Tg Argb",
-      "precio": 11999,
-      "img": "img/productos/cpu1.webp"
+      "precio": 11.999,
+      "img": "img/productos/cpu1.webp",
+      "categoria": "gabinete"
     },
     {
       "id": 2,
       "nombre": "Gabinete Thermaltake Level 20",
-      "precio": 15630,
-      "img": "img/productos/cpu2.webp"
+      "precio": 15.699,
+      "img": "img/productos/cpu2.webp",
+      "categoria": "gabinete"
     },
     {
       "id": 3,
       "nombre": "Gabinete Gamer Cooler Master K501l Argb Atx",
-      "precio": 15400,
-      "img": "img/productos/cpu4.webp"
+      "precio": 15.499,
+      "img": "img/productos/cpu4.webp",
+      "categoria": "gabinete"
     },  {
       "id": 4,
       "nombre": "Gabinete Premium Master BH232 Argb",
-      "precio": 16599,
-      "img": "img/productos/cpu3.webp"
+      "precio": 16.599,
+      "img": "img/productos/cpu3.webp",
+      "categoria": "gabinete"
     },  {
       "id": 5,
       "nombre": "Consola Gamer Portátil Netmak 16bits 140 Juegos",
-      "precio": 4599,
-      "img": "img/productos/consola1.webp"
+      "precio": 4.599,
+      "img": "img/productos/consola1.webp",
+      "categoria": "consola"
     },  {
       "id": 6,
       "nombre": "Nintendo Switch OLED 64GB Standard",
-      "precio": 94599,
-      "img": "img/productos/consola2.webp"
+      "precio": 94.599,
+      "img": "img/productos/consola2.webp",
+      "categoria": "consola"
     },
     {
       "id": 7,
       "nombre": "Sony PlayStation 4 Slim 1TB Standard",
-      "precio": 103300,
-      "img": "img/productos/consola3.webp"
+      "precio": 103.399,
+      "img": "img/productos/consola3.webp",
+      "categoria": "consola"
     },
     {
       "id": 8,
       "nombre": "Sony PlayStation 5 825GB Standard",
-      "precio": 160450,
-      "img": "img/productos/consola4.webp"
+      "precio": 160.499,
+      "img": "img/productos/consola4.webp",
+      "categoria": "consola"
     },
     {
       "id": 9,
       "nombre": "Kit de teclado y mouse gamer Newvision",
       "precio": 5.799,
-      "img": "img/productos/peri1.webp"
+      "img": "img/productos/peri1.webp",
+      "categoria": "perifericos"
     },
     {
       "id": 10,
-      "nombre": "Sony PlayStation 5 825GB Standard",
-      "precio": 160450,
-      "img": "img/productos/peri2.webp"
+      "nombre": "Kit de teclado y mouse gamer Redragon K552RGB",
+      "precio": 6.799,
+      "img": "img/productos/peri2.webp",
+      "categoria": "perifericos"
     },
     {
       "id": 11,
-      "nombre": "Sony PlayStation 5 825GB Standard",
-      "precio": 160450,
-      "img": "img/productos/mause.webp"
+      "nombre": "Mause Redragon Griffin M607 RGB USB 7200DPI",
+      "precio": 2.499,
+      "img": "img/productos/mause.webp",
+      "categoria": "perifericos"
     },
     {
       "id": 12,
-      "nombre": "Sony PlayStation 5 825GB Standard",
-      "precio": 160450,
-      "img": "img/productos/auriculares.webp"
+      "nombre": "Auriculares Logitech G733 Lightspeed RGB Blue",
+      "precio": 8.599,
+      "img": "img/productos/auriculares.webp",
+      "categoria": "perifericos"
+    },
+    {
+      "id": 13,
+      "nombre": "Msi Radeon Rx 6900 Xt Gaming X Trio 16gb",
+      "precio": 349.999,
+      "img": "img/productos/placavideo1.webp",
+      "categoria": "placas"
+    },
+    {
+      "id": 14,
+      "nombre": "Nvidia MSI Ventus GeForce RTX 20 RTX 2060",
+      "precio": 186.999,
+      "img": "img/productos/placavideo2.webp",
+      "categoria": "placas"
+    },
+    {
+      "id": 15,
+      "nombre": "Nvidia Colorful IGame GeForce RTX 30 RTX 3060",
+      "precio": 159.999,
+      "img": "img/productos/placavideo3.webp",
+      "categoria": "placas"
+    },    
+    {
+      "id": 16,
+      "nombre": "Nvidia Asus Dual GeForce GTX 16 Series GTX 1650",
+      "precio": 64.899,
+      "img": "img/productos/placavideo4.webp",
+      "categoria": "placas"
+    },
+    {
+      "id": 17,
+      "nombre": "PC Armada Gamer Amd A10 9700 Video R7 8gb Ddr4 Led Curvo 27",
+      "precio": 109.999,
+      "img": "img/productos/pcgamer1.webp",
+      "categoria": "pc"
+    },
+    {
+      "id": 18,
+      "nombre": "Pc Armada Gamer Amd A8 9600 X10 Nucleos Video R7",
+      "precio": 61.999,
+      "img": "img/productos/pcgamer2.webp",
+      "categoria": "pc"
+    },
+    {
+      "id": 19,
+      "nombre": "Pc Gamer Armada Amd Ryzen 5 5600g 16gb Ssd 480 Radeon Vega",
+      "precio": 72.999,
+      "img": "img/productos/pcgamer3.webp",
+      "categoria": "pc"
+    },
+    {
+      "id": 20,
+      "nombre": "Pc Gamer Armada Intel Armada 8va Gen I5 8400 1tb",
+      "precio": 71.999,
+      "img": "img/productos/pcgamer4.webp",
+      "categoria": "pc"
+    },
+    {
+      "id": 21,
+      "nombre": "Memoria RAM Vengeance RGB 16GB 2 Corsair",
+      "precio": 15.999,
+      "img": "img/productos/ram.webp",
+      "categoria": "ram"
+    },
+    {
+      "id": 22,
+      "nombre": "Memoria RAM XLR8 Gaming EPIC-X RGB 8GB",
+      "precio": 6.199,
+      "img": "img/productos/ram2.webp",
+      "categoria": "ram"
+    },
+    {
+      "id": 23,
+      "nombre": "Memoria RAM Vengeance RGB 16GB 2 Corsair",
+      "precio": 15.899,
+      "img": "img/productos/ram3.webp",
+      "categoria": "ram"
+    },
+    {
+      "id": 24,
+      "nombre": "Memoria RAM Vengeance RGB 8GB",
+      "precio": 8.499,
+      "img": "img/productos/ram4.webp",
+      "categoria": "ram"
     }
   ]

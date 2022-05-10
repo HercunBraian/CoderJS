@@ -198,16 +198,32 @@
       <!-- ############# Fin de Categorias ################ -->
 
     <!-- ############# Inicio Productos ################ -->
-
     <div class="container">
       <div class="row" data-aos="fade-up">
         <div class="col-lg-12 text-center cat-titulo mb-5">
             <h2 class="linea animate__animated animate__backInLeft"><span>PRODUCTOS</span></h2>
         </div>
     </div>
-
-      <div class="row" id="cards"></div>
     </div>
+
+    <div class="container">
+      <h1>Escoge un producto</h1>
+      <div class="container store-wrapper  justify-content-center">
+        <div class="category_list">
+          <a class="category_item" category="all">Todo</a>
+          <a class="category_item" category="gabinete">Gabinetes</a>
+          <a class="category_item" category="consola">Consolas</a>
+          <a class="category_item" category="perifericos">Perifericos</a>
+          <a class="category_item" category="placas">Placas</a>
+          <a class="category_item" category="pc">Pc Gamers</a>
+          <a class="category_item" category="ram">Memorias</a>
+        </div>
+        <section class="products-list  justify-content-center" id="cards">      
+        </section>
+      </div>
+    </div>
+
+
 
     <template id="template-compra">
       <div class="item">
@@ -237,18 +253,31 @@
       <h2>Total: <strong class="price-total">0</strong> $</h2>
     </template>
 
-    <template id="template-card">
-      <div class="col col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
-        <div class="card text-black productos__row">
-          <img src="" class="productos__img" alt="Memoria Ram">
-          <h5>Gabinete Gamer Thermaltake V250 Tg Argb</h5>
-
-          <p class="productos__precio">$11.599</p>
-          <button class="productos__carrito btn btn-dark">Comprar</button>
-        </div>
-
+<!--     <template id="template-card">
+      <div class="product-item" category="laptops">
+        <img src="img/productos/auriculares.webp" alt="" >
+        <a href="#">Laptop Hp</a>
+        <p>$300.23</p>
+        <button class="btn cart2 px-auto">Añadir al Carrito</button>
       </div>
-    </template>
+    </template> -->
+
+    <template id="template-card">
+      <div class="product-item col-sm-6 col-lg-3 mb-4" category="laptops">
+        <img src="img/productos/auriculares.webp" alt="" >
+      <h3>Earphone</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <b>$</b><h6>$40.00</h6>
+      <ul>
+        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+      </ul>
+      <button class="buy-2">Añadir al Carrito</button>
+    </div>
+  </template>
 
         <!-- ############# Inicio de Footer ################ -->
         <footer class="text-center text-lg-start text-white" style="background-color: #382659">

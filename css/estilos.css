@@ -420,3 +420,230 @@ cursor: pointer;
 .text-deconone {
   text-decoration: none;
   list-style: none; }
+
+
+/* NUEVOS ESTILOS DE NUEVOS PRODUCTOS */
+
+.wrap{
+  max-width: 1100px;
+  width: 90%;
+  margin: auto;
+}
+
+.wrap > h1{
+  color: #494B4D;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 15px 0px;
+}
+
+.wrap > h1:after{
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #C7C7C7;
+  margin: 20px 0;
+}
+
+.store-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category_list{
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+}
+
+.category_list .category_item{
+  display: inline-block;
+  width: 90%;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  background: #E84C3D;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+
+  outline: 2px solid rgb(57, 57, 57);
+  position: relative;
+  overflow: hidden;
+  transition: color 1s;
+  background-image: linear-gradient(to right, #322749, #42284d, #52294e, #62294d, #712a4a);
+}
+
+.category_item:hover{
+  color: #101010;
+}
+
+.category_list a{
+  z-index: 1;
+}
+
+.category_item::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 150%;
+  height: 100%;
+  background-color: #fff;
+  transform: scaleX(0) skewX(35deg);
+  transform-origin: left;
+  z-index: -1;
+  transition: transform 1s;
+}
+
+.category_item:hover::before{
+  transform: scaleX(1) skewX(35deg);
+}
+
+.category_list .ct_item-active{
+  background: #182532;
+}
+
+/* PRODUCTOS ============*/
+
+.products-list{
+  width: 82%;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+
+.products-list .product-item{
+  width: 230px;
+  margin: 0 15px 15px 15px;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  border-radius:10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: .4s;
+}
+
+.products-list .product-item img{
+  width: 191px;
+  height: 183px;
+}
+
+.products-list .product-item a{
+  text-decoration: none;
+  }
+
+.products-list .product-item h3{
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.products-list .product-item h6{
+  font-size: 26px;
+  text-align: center;
+  color: #222f3e;
+  margin: 0;
+  display: contents;
+}
+
+.products-list .product-item b{
+  font-size: 24px;
+}
+
+.products-list .product-item ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.products-list .product-item li{
+  padding: 5px;
+}
+
+.fa{
+  color: #ff9f43;
+  font-size: 17px;
+  transition: .4s;
+  }
+  .fa:hover{
+  transform: scale(1.3);
+  transition: .6s;
+  }
+
+.products-list .product-item:hover{
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  transform: translate(0px, -8px);
+  transition: .6s;
+  }
+  
+
+.products-list .product-item p{
+  text-align: center;
+  color: #b2bec3;
+  padding: 0 8px;
+  }
+
+.buy-2 {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(225, 225, 225);
+  width: 100%;
+  padding: 15px;
+  border:0px;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-image: linear-gradient(to right, #322749, #42284d, #52294e, #62294d, #712a4a);
+}
+
+.buy-2:hover {
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(to left, #322749, #42284d, #52294e, #62294d, #712a4a);
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px){
+  .category_list{
+    width: 100%;
+  }
+
+  .category_list{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .category_list .category_item{
+    align-self: flex-start;
+    width: 15%;
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 700px){
+  .category_list{
+    flex-direction: column;
+  }
+  .category_list .category_item{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

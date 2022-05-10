@@ -467,7 +467,7 @@ cursor: pointer;
   text-align: center;
   text-decoration: none;
   color: #fff;
-
+  border-radius: 5px;
   outline: 2px solid rgb(57, 57, 57);
   position: relative;
   overflow: hidden;
@@ -477,6 +477,7 @@ cursor: pointer;
 
 .category_item:hover{
   color: #101010;
+  cursor: pointer;
 }
 
 .category_list a{
